@@ -1,0 +1,106 @@
+<div class="card-header bordered">
+    <div class="header-block">
+      <h5 class="title">Date filter</h5>
+    </div>
+    <div  class="form-inline pull-right m-r-2">
+      <div class="form-group"   id="search_placeholder">
+        <input
+          type="text"
+          class="form-control"
+          [placeholder]="searchPlaceholder"
+          [(ngModel)]="searchValue"
+        >
+      </div>
+
+
+     <!-- <a class='dropdown-trigger btn'  data-position="left" data-target='dropdown1'  #dropdown>Параметр</a>
+
+      
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a (click)="changeCriteria('amount')">Сумма</a></li>
+        <li><a (click)="changeCriteria('date')">Дата</a></li>
+
+        <li><a (click)="changeCriteria('time')" >Время</a></li>
+        <li><a (click)="changeCriteria('number')">Номер</a></li>
+      </ul>  -->
+    <!--  <div class='dropdown-trigger btn'  data-target='dropdown1' wfmDropdown>
+        <button type="button" class="btn btn-secondary dropdown-toggle ">
+          Параметр
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="changeCriteria('amount')">Сумма</a>
+          <a class="dropdown-item" (click)="changeCriteria('date')">Дата</a>
+          <a class="dropdown-item" (click)="changeCriteria('time')">Время</a>
+          <a class="dropdown-item" (click)="changeCriteria('numberCategory')">Номер</a>
+        </div>
+      </div>   -->
+    </div>
+  </div>
+
+
+<table  class="highlight mb2">
+  
+  <thead>
+  <tr>
+    <th>№</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Amount</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody  >
+  <tr *ngFor="let order of orders | wfmFilter:searchValue:searchField; let i = index " >
+    <td  >{{order.order  }}</td>
+    <td>{{order.date | date:'dd.MM.yyyy'}}</td>
+    <td>{{order.date | date:'HH:mm:ss'}}</td>
+    <td>{{computePrice(order)  }} $</td>  
+    <td>
+      <button class="btn btn-small black" (click)="selectOrder(order)">
+        <i class="material-icons">open_in_browser</i>
+      </button>
+    </td>
+  </tr>
+ 
+
+
+
+
+  </tbody>
+</table>
+
+
+<div class="modal modal-fixed-footer" #modal>
+  <div class="modal-content" *ngIf="selectedOrder">
+    <h4 class="mb1">Order №{{selectedOrder.order}}</h4>
+    <table class="highlight">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let item of selectedOrder.list">
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.cost}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="order-summary">
+      <p>Total price <strong>{{computePrice(selectedOrder)}} $</strong></p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      class="modal-action waves-effect waves-black btn-flat"
+      (click)="closeModal()"
+    >
+    Close
+    </button>
+  </div>
+</div>

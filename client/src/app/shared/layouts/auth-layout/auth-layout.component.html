@@ -1,0 +1,25 @@
+<nav>
+  <div class="nav-wrapper blue-grey">
+    <a routerLink="/" class="brand-logo">Dashboard</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+   <!--      <li  routerLinkActive="active" ><a class="waves-effect waves-light btn red darken-4" routerLink="/login" >Login</a></li>
+        <li  routerLinkActive="active">
+            <a class="waves-effect waves-light btn red darken-4" routerLink="/register" >Sing up</a>
+          </li> -->
+
+      <li routerLinkActive="active">
+        <a routerLink="/login">Sign in</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/register">Sing up</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+<div class="auth-block">
+  <router-outlet></router-outlet>
+</div>

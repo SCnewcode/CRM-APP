@@ -1,0 +1,31 @@
+@media only screen and (max-width: 375px) {
+    .card {
+        width: 310px;
+    }
+    .orgLabel {
+        top: -14px;
+    
+    }
+}
+
+
+#enter-card-action {
+    display: none;
+    border-top: none;
+   
+}
+
+@media only screen and (max-width: 990px) {
+    #enter-card-action {
+        display: block;
+    }
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #26a69a;
+    text-transform: capitalize;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+    color: #2bbbad;
+}

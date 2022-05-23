@@ -1,0 +1,75 @@
+
+<ul class="sidenav sidenav-fixed a-sidenav _hide_menu">
+  <h4 class="title-one">Dashboard</h4>
+
+  <li  class="bold" *ngFor="let link of links" routerLinkActive="active"   >
+    <a   [routerLink]="[link.url]" class="waves-effect waves-orange">
+      {{link.name}}
+    </a>
+  </li>
+
+<!-- 
+ <div  >
+   <a href="#" *ngFor="let user of users">
+    Hello, {{user.email}}  
+   </a>  
+  </div>  -->
+
+  <li class="bold last">
+    <a href="#" class="waves-effect waves-orange" (click)="logout($event)">Log Out</a>
+  </li>
+
+</ul>
+
+
+
+
+<ul id="slide-out" class="sidenav" #sidenav>
+  <h4 class="title-one">Dashboard</h4>
+  <li  class="bold" *ngFor="let link of links" routerLinkActive="active"   >
+    <a   [routerLink]="[link.url]" class="waves-effect waves-orange">
+      {{link.name}}
+    </a>
+  </li>
+
+
+
+
+
+
+  <li class="bold last">
+    <a href="#" class="waves-effect waves-orange" (click)="logout($event)">Log Out</a>
+  </li>
+
+</ul>
+
+
+<a href="#"  data-target="slide-out" class="sidenav-trigger _color_new"><i class="material-icons medium">menu</i></a>
+
+<div class="fixed-action-btn" #floating>
+  <a class="btn-floating btn-large  black">
+    <i class="large material-icons">add</i>
+  </a>
+  <ul>
+    <li>
+      <a class="btn-floating green" routerLink="/order">
+        <i class="material-icons">assignment</i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating blue" routerLink="/categories/new">
+        <i class="material-icons">list</i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
+
+<a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
+
+
+

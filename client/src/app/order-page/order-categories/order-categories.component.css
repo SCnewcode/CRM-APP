@@ -1,0 +1,14 @@
+.responsive-img.order-img {
+    height: 220px!important;
+}
+
+.waves-effect img {
+    width: 100% !important;
+
+}
+
+.order-row .card {
+    width: 30% !important;
+    min-width: 280px !important;
+    margin-right: 20px !important;
+}

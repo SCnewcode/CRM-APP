@@ -1,0 +1,33 @@
+
+ @media only screen and (max-width : 765px) {
+
+  main, footer {
+      margin-left: 0;
+  }
+
+  ._hide_menu {
+    display: none;
+  } 
+
+} 
+
+
+ 
+
+._color_new {
+  color: #000;
+  margin-left: 20px;
+}
+
+
+.title-one {
+  background-color: #000;
+  color: #fff;
+  opacity: 1;
+  margin: 0 0 40px 0;
+  padding: 15px 30px;
+}
+
+#menu {
+  visibility: hidden;
+}
